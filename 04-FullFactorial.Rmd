@@ -1,0 +1,19 @@
+# Full factorial designs 
+
+## OFAT and their limitations
+
+## Full factorial designs
+
+### Two-levels factorial designs
+
+#### Standard coding of the experimental conditions
+
+#### Yates order
+
+### Multiple-levels factorial designs
+
+### Mixed-levels factorial designs
+
+## Degrees of freedom 
+
+## Interactions

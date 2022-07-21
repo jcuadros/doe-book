@@ -1,0 +1,23 @@
+# Fractional and saturated factorial designs 
+
+## Fractional factorial designs
+
+### Two-levels fractional factorial design
+
+### Alias structure and design generator
+
+### Resolution of a design
+
+## Saturated factorial designs
+
+## Plackett-Burman designs
+
+## Taguchi's approach to orthogonal arrays
+
+## To explore further
+
+### Adding center points
+
+### Definitive screening designs
+
+

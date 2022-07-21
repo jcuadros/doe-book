@@ -1,0 +1,20 @@
+# Analyzing an experiment 
+
+## Compiling the experimental matrix
+
+## Analyzing the experiment
+
+### Ortogonality
+
+### Confounded variables
+
+## Identifying relevant contributions
+
+## Visualizing results, effects and interactions
+
+## Analyzing through models
+
+### Quantitative models
+
+### Models with nominal variables
+

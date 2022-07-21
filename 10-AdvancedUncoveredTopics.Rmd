@@ -1,0 +1,8 @@
+# Advanced and uncovered topics
+
+## Designs for nonlinear effects
+
+## Designs for systems with restrictions
+
+## Mixtures designs
+

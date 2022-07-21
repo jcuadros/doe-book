@@ -1,0 +1,25 @@
+# Experimenting 
+
+Experimenting is a common task in any scientific endeavor. However, and this is not uncommon, being a common task does not warrant a full comprehension of it. 
+
+Let's refresh here some fudamental concepts.
+
+## Why do we experiment? The causality problem
+
+## The elements of an experiment
+
+### A basic schema for an experiment
+
+### Types of variables
+
+### Data types
+
+## Validity of an experiment
+
+### Internal validity
+
+### External validity
+
+## Running an experiment
+
+

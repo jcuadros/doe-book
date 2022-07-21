@@ -1,0 +1,45 @@
+--- 
+title: "Design of Experiments"
+author: "Jordi Cuadros, Vanessa Serrano"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: This is a book on design of experiments, build for a Master's level course in a scientific discipline
+link-citations: yes
+github-repo: jcuadros/doe-book
+---
+
+# About
+This book has been developed by Jordi Cuadros (ORCID) and Vanessa Serrano as a reference material for a Master's course in Design of Experiments at IQS Universitat Ramon Llull (http://www.iqs.url.edu) in Barcelona, Spain. First version (always a draft) was published on September 2022.
+
+Current version (Ubuntu-style) is `r format(Sys.Date(),"%y.%m.%d")`
+
+
+## License and contributing
+This work is licensed under a Creative Common BY-SA unported license.
+
+Should you be interested in contributing to this work, suggest corrections or improvements, or just say thanks, feel free to reach the authors at jordi.cuadros@iqs.url.edu.
+
+
+```{r include=FALSE}
+# install and load any required package
+options(install.packages.check.source = "no")
+
+pckgs<-c("rmarkdown","pander","ggthemes",
+         "tidyverse","XML","DT","gplots",
+         "scales","formattable","treemap",
+         "viridis","cat","gsubfn","vroom",
+         "bookdown", "knitr")
+pckgs2Install<-pckgs[!(pckgs %in% library()$results[,1])]
+pckgs2Load<-pckgs[!(pckgs %in% (.packages()))]
+for(pckg in pckgs2Install) {install.packages(pckg,repos="https://cloud.r-project.org/",
+         quiet=TRUE, type="binary")}
+for(pckg in pckgs2Load) {library(pckg,character.only = TRUE)}
+
+
+# automatically create a bib database for R packages
+knitr::write_bib(.packages(), 'packages.bib')
+```

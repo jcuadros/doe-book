@@ -1,0 +1,8 @@
+# Taguchi Robust Design strategy
+
+## Noise and control factors
+
+## Inner and outer arrays designs
+
+## Two-step optimization technique
+

@@ -1,0 +1,17 @@
+# One factor experiments 
+
+## Two-level experiments
+
+## Multiple-level experiments
+
+### Quantitative variables
+
+### Nominal levels
+
+## To explore further
+
+### Single-subject experiments
+
+### Split-plot
+
+### Salomon design
