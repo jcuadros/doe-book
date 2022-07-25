@@ -12,6 +12,4 @@
 
 ### Single-subject experiments
 
-### Split-plot
-
 ### Salomon design

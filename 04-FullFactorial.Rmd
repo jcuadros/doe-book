@@ -16,4 +16,13 @@
 
 ## Degrees of freedom 
 
-## Interactions
+## Interactions and error
+
+## To explore further
+
+### Latin and grecolatin square
+
+### Nested, split-plot, split-split and strip-strip designs
+
+### BIBD
+

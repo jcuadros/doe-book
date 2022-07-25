@@ -1,0 +1,560 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Design of Experiments},
+  pdfauthor={Jordi Cuadros, Vanessa Serrano},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Design of Experiments}
+\author{Jordi Cuadros, Vanessa Serrano}
+\date{2022-07-25}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{about}{%
+\chapter{About}\label{about}}
+
+This book has been developed by Jordi Cuadros (ORCID) and Vanessa Serrano as a reference material for a Master's course in Design of Experiments at IQS Universitat Ramon Llull (\url{http://www.iqs.url.edu}) in Barcelona, Spain. First version (always a draft) was published on September 2022.
+
+Current version (Ubuntu-style) is 22.07.25
+
+\hypertarget{license-and-contributing}{%
+\section{License and contributing}\label{license-and-contributing}}
+
+This work is licensed under a Creative Common BY-SA unported license.
+
+Should you be interested in contributing to this work, suggest corrections or improvements, or just say thanks, feel free to reach the authors at \href{mailto:jordi.cuadros@iqs.url.edu}{\nolinkurl{jordi.cuadros@iqs.url.edu}}.
+
+\hypertarget{experimenting}{%
+\chapter{Experimenting}\label{experimenting}}
+
+Experimenting is a common task in any scientific endeavor. However, and this is not uncommon, being a common task does not warrant a full comprehension of it.
+
+Let's refresh here some fudamental concepts.
+
+\hypertarget{why-do-we-experiment-the-causality-problem}{%
+\section{Why do we experiment? The causality problem}\label{why-do-we-experiment-the-causality-problem}}
+
+\hypertarget{the-elements-of-an-experiment}{%
+\section{The elements of an experiment}\label{the-elements-of-an-experiment}}
+
+\hypertarget{a-basic-schema-for-an-experiment}{%
+\subsection{A basic schema for an experiment}\label{a-basic-schema-for-an-experiment}}
+
+\hypertarget{types-of-variables}{%
+\subsection{Types of variables}\label{types-of-variables}}
+
+\hypertarget{data-types}{%
+\subsection{Data types}\label{data-types}}
+
+\hypertarget{validity-of-an-experiment}{%
+\section{Validity of an experiment}\label{validity-of-an-experiment}}
+
+\hypertarget{internal-validity}{%
+\subsection{Internal validity}\label{internal-validity}}
+
+\hypertarget{external-validity}{%
+\subsection{External validity}\label{external-validity}}
+
+\hypertarget{running-an-experiment}{%
+\section{Running an experiment}\label{running-an-experiment}}
+
+\hypertarget{replication-and-repetition}{%
+\subsection{Replication and repetition}\label{replication-and-repetition}}
+
+\hypertarget{randomization}{%
+\subsection{Randomization}\label{randomization}}
+
+\hypertarget{to-explore-further}{%
+\section{To explore further}\label{to-explore-further}}
+
+\hypertarget{hierarchy-of-evidence}{%
+\subsection{Hierarchy of evidence}\label{hierarchy-of-evidence}}
+
+\url{https://en.wikipedia.org/wiki/Hierarchy_of_evidence}
+
+\hypertarget{analyzing-an-experiment}{%
+\chapter{Analyzing an experiment}\label{analyzing-an-experiment}}
+
+\hypertarget{compiling-the-experimental-matrix}{%
+\section{Compiling the experimental matrix}\label{compiling-the-experimental-matrix}}
+
+\hypertarget{analyzing-the-experiment}{%
+\section{Analyzing the experiment}\label{analyzing-the-experiment}}
+
+\hypertarget{ortogonality}{%
+\subsection{Ortogonality}\label{ortogonality}}
+
+\hypertarget{confounded-variables}{%
+\subsection{Confounded variables}\label{confounded-variables}}
+
+\hypertarget{optimality}{%
+\subsection{Optimality}\label{optimality}}
+
+\hypertarget{efficacy}{%
+\subsection{Efficacy}\label{efficacy}}
+
+\hypertarget{sphericity}{%
+\subsection{Sphericity}\label{sphericity}}
+
+\hypertarget{identifying-relevant-contributions}{%
+\section{Identifying relevant contributions}\label{identifying-relevant-contributions}}
+
+\hypertarget{pareto-chart-of-the-effects}{%
+\subsection{Pareto chart of the effects}\label{pareto-chart-of-the-effects}}
+
+\hypertarget{pareto-chart-of-the-contributions}{%
+\subsection{Pareto chart of the contributions}\label{pareto-chart-of-the-contributions}}
+
+\hypertarget{normal-plot}{%
+\subsection{Normal plot}\label{normal-plot}}
+
+\hypertarget{half-normal-plot}{%
+\subsection{Half-normal plot}\label{half-normal-plot}}
+
+\hypertarget{visualizing-results-effects-and-interactions}{%
+\section{Visualizing results, effects and interactions}\label{visualizing-results-effects-and-interactions}}
+
+\hypertarget{main-effects-plots}{%
+\subsection{Main effects plots}\label{main-effects-plots}}
+
+\hypertarget{interaction-plots}{%
+\subsection{Interaction plots}\label{interaction-plots}}
+
+\hypertarget{analyzing-through-models}{%
+\section{Analyzing through models}\label{analyzing-through-models}}
+
+\hypertarget{quantitative-models}{%
+\subsection{Quantitative models}\label{quantitative-models}}
+
+\hypertarget{models-with-nominal-variables}{%
+\subsection{Models with nominal variables}\label{models-with-nominal-variables}}
+
+\hypertarget{errors-estimation}{%
+\section{Errors estimation}\label{errors-estimation}}
+
+\hypertarget{lack-of-fit-error}{%
+\subsection{Lack-of-fit error}\label{lack-of-fit-error}}
+
+\hypertarget{true-error}{%
+\subsection{True error}\label{true-error}}
+
+\hypertarget{practical-relevance-and-statistical-significance}{%
+\subsection{Practical relevance and statistical significance}\label{practical-relevance-and-statistical-significance}}
+
+\hypertarget{one-factor-experiments}{%
+\chapter{One factor experiments}\label{one-factor-experiments}}
+
+\hypertarget{two-level-experiments}{%
+\section{Two-level experiments}\label{two-level-experiments}}
+
+\hypertarget{multiple-level-experiments}{%
+\section{Multiple-level experiments}\label{multiple-level-experiments}}
+
+\hypertarget{quantitative-variables}{%
+\subsection{Quantitative variables}\label{quantitative-variables}}
+
+\hypertarget{nominal-levels}{%
+\subsection{Nominal levels}\label{nominal-levels}}
+
+\hypertarget{to-explore-further-1}{%
+\section{To explore further}\label{to-explore-further-1}}
+
+\hypertarget{single-subject-experiments}{%
+\subsection{Single-subject experiments}\label{single-subject-experiments}}
+
+\hypertarget{salomon-design}{%
+\subsection{Salomon design}\label{salomon-design}}
+
+\hypertarget{full-factorial-designs}{%
+\chapter{Full factorial designs}\label{full-factorial-designs}}
+
+\hypertarget{ofat-and-their-limitations}{%
+\section{OFAT and their limitations}\label{ofat-and-their-limitations}}
+
+\hypertarget{full-factorial-designs-1}{%
+\section{Full factorial designs}\label{full-factorial-designs-1}}
+
+\hypertarget{two-levels-factorial-designs}{%
+\subsection{Two-levels factorial designs}\label{two-levels-factorial-designs}}
+
+\hypertarget{standard-coding-of-the-experimental-conditions}{%
+\subsubsection{Standard coding of the experimental conditions}\label{standard-coding-of-the-experimental-conditions}}
+
+\hypertarget{yates-order}{%
+\subsubsection{Yates order}\label{yates-order}}
+
+\hypertarget{multiple-levels-factorial-designs}{%
+\subsection{Multiple-levels factorial designs}\label{multiple-levels-factorial-designs}}
+
+\hypertarget{mixed-levels-factorial-designs}{%
+\subsection{Mixed-levels factorial designs}\label{mixed-levels-factorial-designs}}
+
+\hypertarget{degrees-of-freedom}{%
+\section{Degrees of freedom}\label{degrees-of-freedom}}
+
+\hypertarget{interactions-and-error}{%
+\section{Interactions and error}\label{interactions-and-error}}
+
+\hypertarget{to-explore-further-2}{%
+\section{To explore further}\label{to-explore-further-2}}
+
+\hypertarget{latin-and-grecolatin-square}{%
+\subsection{Latin and grecolatin square}\label{latin-and-grecolatin-square}}
+
+\hypertarget{nested-split-plot-split-split-and-strip-strip-designs}{%
+\subsection{Nested, split-plot, split-split and strip-strip designs}\label{nested-split-plot-split-split-and-strip-strip-designs}}
+
+\hypertarget{bibd}{%
+\subsection{BIBD}\label{bibd}}
+
+\hypertarget{fractional-and-saturated-factorial-designs}{%
+\chapter{Fractional and saturated factorial designs}\label{fractional-and-saturated-factorial-designs}}
+
+\hypertarget{fractional-factorial-designs}{%
+\section{Fractional factorial designs}\label{fractional-factorial-designs}}
+
+\hypertarget{two-levels-fractional-factorial-design}{%
+\subsection{Two-levels fractional factorial design}\label{two-levels-fractional-factorial-design}}
+
+\hypertarget{alias-structure-and-design-generator}{%
+\subsection{Alias structure and design generator}\label{alias-structure-and-design-generator}}
+
+\hypertarget{resolution-of-a-design}{%
+\subsection{Resolution of a design}\label{resolution-of-a-design}}
+
+\hypertarget{saturated-factorial-designs}{%
+\section{Saturated factorial designs}\label{saturated-factorial-designs}}
+
+\hypertarget{plackett-burman-designs}{%
+\section{Plackett-Burman designs}\label{plackett-burman-designs}}
+
+\hypertarget{taguchis-approach-to-orthogonal-arrays}{%
+\section{Taguchi's approach to orthogonal arrays}\label{taguchis-approach-to-orthogonal-arrays}}
+
+\hypertarget{follow-up}{%
+\section{Follow-up}\label{follow-up}}
+
+\hypertarget{follow-up-designs}{%
+\subsection{Follow-up designs}\label{follow-up-designs}}
+
+\hypertarget{confirmatory-runs}{%
+\subsection{Confirmatory runs}\label{confirmatory-runs}}
+
+\hypertarget{to-explore-further-3}{%
+\section{To explore further}\label{to-explore-further-3}}
+
+\hypertarget{adding-center-points}{%
+\subsection{Adding center points}\label{adding-center-points}}
+
+\hypertarget{definitive-screening-designs}{%
+\subsection{Definitive screening designs}\label{definitive-screening-designs}}
+
+\hypertarget{non-orthogonal-arrays}{%
+\chapter{Non orthogonal arrays}\label{non-orthogonal-arrays}}
+
+\hypertarget{modified-taguchis-orthogonal-arrays}{%
+\section{Modified Taguchi's orthogonal arrays}\label{modified-taguchis-orthogonal-arrays}}
+
+\hypertarget{column-upgradingmerging}{%
+\subsection{Column upgrading/merging}\label{column-upgradingmerging}}
+
+\hypertarget{dummy-treatmentlevel-or-column-downgradingdegrading}{%
+\subsection{Dummy treatment/level or column downgrading/degrading}\label{dummy-treatmentlevel-or-column-downgradingdegrading}}
+
+\hypertarget{optimal-designs}{%
+\section{Optimal designs}\label{optimal-designs}}
+
+\hypertarget{supersaturated-designs}{%
+\section{Supersaturated designs}\label{supersaturated-designs}}
+
+\hypertarget{taguchi-robust-design-strategy}{%
+\chapter{Taguchi Robust Design strategy}\label{taguchi-robust-design-strategy}}
+
+\hypertarget{noise-and-control-factors}{%
+\section{Noise and control factors}\label{noise-and-control-factors}}
+
+\hypertarget{inner-and-outer-arrays-designs}{%
+\section{Inner and outer arrays designs}\label{inner-and-outer-arrays-designs}}
+
+\hypertarget{two-step-optimization-technique}{%
+\section{Two-step optimization technique}\label{two-step-optimization-technique}}
+
+\hypertarget{surface-response-designs}{%
+\chapter{Surface response designs}\label{surface-response-designs}}
+
+\hypertarget{three-level-full-factorial-designs}{%
+\section{Three-level full factorial designs}\label{three-level-full-factorial-designs}}
+
+\hypertarget{box-wilson-central-composite-designs}{%
+\section{Box-Wilson central composite designs}\label{box-wilson-central-composite-designs}}
+
+\hypertarget{box-behnken-designs}{%
+\section{Box-Behnken designs}\label{box-behnken-designs}}
+
+\hypertarget{doehlert-designs}{%
+\section{Doehlert designs}\label{doehlert-designs}}
+
+\hypertarget{sequential-design-of-experiments}{%
+\section{Sequential design of experiments}\label{sequential-design-of-experiments}}
+
+\hypertarget{to-explore-further-4}{%
+\section{To explore further}\label{to-explore-further-4}}
+
+\hypertarget{optimal-designs-for-rsm}{%
+\subsection{Optimal designs for RSM}\label{optimal-designs-for-rsm}}
+
+\hypertarget{sequential-optimization}{%
+\chapter{Sequential optimization}\label{sequential-optimization}}
+
+\hypertarget{evop}{%
+\section{EVOP}\label{evop}}
+
+\hypertarget{simplex}{%
+\section{Simplex}\label{simplex}}
+
+\hypertarget{advanced-and-uncovered-topics}{%
+\chapter{Advanced and uncovered topics}\label{advanced-and-uncovered-topics}}
+
+\hypertarget{designs-for-nonlinear-effects}{%
+\section{Designs for nonlinear effects}\label{designs-for-nonlinear-effects}}
+
+\hypertarget{designs-for-systems-with-restrictions}{%
+\section{Designs for systems with restrictions}\label{designs-for-systems-with-restrictions}}
+
+\hypertarget{mixtures-designs}{%
+\subsection{Mixtures designs}\label{mixtures-designs}}
+
+\hypertarget{random-levels}{%
+\section{Random levels}\label{random-levels}}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-R-rmarkdown}{}}%
+Allaire, J., Xie, Y., McPherson, J., Luraschi, J., Ushey, K., Atkins, A., Wickham, H., Cheng, J., Chang, W., \& Iannone, R. (2022). \emph{Rmarkdown: Dynamic documents for r}. \url{https://CRAN.R-project.org/package=rmarkdown}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-ggthemes}{}}%
+Arnold, J. B. (2021). \emph{Ggthemes: Extra themes, scales and geoms for ggplot2}. \url{https://github.com/jrnold/ggthemes}
+
+\leavevmode\vadjust pre{\hypertarget{ref-box2005}{}}%
+Box, G. E., Hunter, J. S., \& Hunter, W. G. (2005). \emph{Statistics for experimenters: Design, discovery and innovation} (2nd ed., Vol. 639). Wiley-Interscience.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-pander}{}}%
+Daróczi, G., \& Tsegelskyi, R. (2022). \emph{Pander: An r pandoc writer}. \url{https://rapporter.github.io/pander/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-viridis}{}}%
+Garnier, S. (2021a). \emph{Viridis: Colorblind-friendly color maps for r}. \url{https://CRAN.R-project.org/package=viridis}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-viridisLite}{}}%
+Garnier, S. (2021b). \emph{viridisLite: Colorblind-friendly color maps (lite version)}. \url{https://CRAN.R-project.org/package=viridisLite}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-gsubfn}{}}%
+Grothendieck, G. (2018). \emph{Gsubfn: Utilities for strings and function arguments}. \url{https://github.com/ggrothendieck/gsubfn}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-proto}{}}%
+Grothendieck, G., Kates, L., \& Petzoldt, T. (2016). \emph{Proto: Prototype object-based programming}. \url{https://github.com/hadley/proto}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-cat}{}}%
+Harding, T., Tusell, F., \& Schafer, J. L. (2012). \emph{Cat: Analysis of categorical-variable datasets with missing values}. \url{http://www.stat.psu.edu/~jls/misoftwa.html\#aut}
+
+\leavevmode\vadjust pre{\hypertarget{ref-nist2002}{}}%
+Heckert, N., Filliben, J., Croarkin, C., Hembree, B., Guthrie, W., Tobias, P., \& Prinz, J. (2002). \emph{Handbook 151: NIST/SEMATECH e-handbook of statistical methods}. NIST Interagency/Internal Report (NISTIR), National Institute of Standards; Technology, Gaithersburg, MD. \url{https://www.itl.nist.gov/div898/handbook/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-purrr}{}}%
+Henry, L., \& Wickham, H. (2020). \emph{Purrr: Functional programming tools}. \url{https://CRAN.R-project.org/package=purrr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-vroom}{}}%
+Hester, J., Wickham, H., \& Bryan, J. (2021). \emph{Vroom: Read and write rectangular text data quickly}. \url{https://CRAN.R-project.org/package=vroom}
+
+\leavevmode\vadjust pre{\hypertarget{ref-minitab2022}{}}%
+Minitab, L. (2022). \emph{Minitab 18 support}. \url{https://support.minitab.com/en-us/minitab/18/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-montgomery2019}{}}%
+Montgomery, D. C. (2019). \emph{Design and analysis of experiments}. John Wiley \& Sons.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-tibble}{}}%
+Müller, K., \& Wickham, H. (2021). \emph{Tibble: Simple data frames}. \url{https://CRAN.R-project.org/package=tibble}
+
+\leavevmode\vadjust pre{\hypertarget{ref-myers2016}{}}%
+Myers, R. H., Montgomery, D. C., \& Anderson-Cook, C. M. (2016). \emph{Response surface methodology: Process and product optimization using designed experiments}. John Wiley \& Sons.
+
+\leavevmode\vadjust pre{\hypertarget{ref-park2008}{}}%
+Park, S. H., \& Antony, J. (2008). \emph{Robust design for quality engineering and six sigma}. World Scientific.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-base}{}}%
+R Core Team. (2022). \emph{R: A language and environment for statistical computing}. R Foundation for Statistical Computing. \url{https://www.R-project.org/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-formattable}{}}%
+Ren, K., \& Russell, K. (2021). \emph{Formattable: Create formattable data structures}. \url{https://CRAN.R-project.org/package=formattable}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-XML}{}}%
+Temple Lang, D. (2022). \emph{XML: Tools for parsing and generating XML within r and s-plus}. \url{http://www.omegahat.net/RSXML/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-treemap}{}}%
+Tennekes, M. (2021). \emph{Treemap: Treemap visualization}. \url{https://CRAN.R-project.org/package=treemap}
+
+\leavevmode\vadjust pre{\hypertarget{ref-psu2022}{}}%
+The Pennsylvannia State University. (2022). \emph{STAT 503 design of experiments}. \url{https://online.stat.psu.edu/stat503/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-gplots}{}}%
+Warnes, G. R., Bolker, B., Bonebakker, L., Gentleman, R., Huber, W., Liaw, A., Lumley, T., Maechler, M., Magnusson, A., Moeller, S., Schwartz, M., \& Venables, B. (2022). \emph{Gplots: Various r programming tools for plotting data}. \url{https://github.com/talgalili/gplots}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ggplot22016}{}}%
+Wickham, H. (2016). \emph{ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. \url{https://ggplot2.tidyverse.org}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-stringr}{}}%
+Wickham, H. (2019). \emph{Stringr: Simple, consistent wrappers for common string operations}. \url{https://CRAN.R-project.org/package=stringr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-forcats}{}}%
+Wickham, H. (2021a). \emph{Forcats: Tools for working with categorical variables (factors)}. \url{https://CRAN.R-project.org/package=forcats}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-tidyverse}{}}%
+Wickham, H. (2021b). \emph{Tidyverse: Easily install and load the tidyverse}. \url{https://CRAN.R-project.org/package=tidyverse}
+
+\leavevmode\vadjust pre{\hypertarget{ref-tidyverse2019}{}}%
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., \ldots{} Yutani, H. (2019). Welcome to the {tidyverse}. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-ggplot2}{}}%
+Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., \& Dunnington, D. (2021). \emph{ggplot2: Create elegant data visualisations using the grammar of graphics}. \url{https://CRAN.R-project.org/package=ggplot2}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-dplyr}{}}%
+Wickham, H., François, R., Henry, L., \& Müller, K. (2022). \emph{Dplyr: A grammar of data manipulation}. \url{https://CRAN.R-project.org/package=dplyr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-tidyr}{}}%
+Wickham, H., \& Girlich, M. (2022). \emph{Tidyr: Tidy messy data}. \url{https://CRAN.R-project.org/package=tidyr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-readr}{}}%
+Wickham, H., Hester, J., \& Bryan, J. (2022). \emph{Readr: Read rectangular text data}. \url{https://CRAN.R-project.org/package=readr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-scales}{}}%
+Wickham, H., \& Seidel, D. (2022). \emph{Scales: Scale functions for visualization}. \url{https://CRAN.R-project.org/package=scales}
+
+\leavevmode\vadjust pre{\hypertarget{ref-knitr2014}{}}%
+Xie, Y. (2014). Knitr: A comprehensive tool for reproducible research in {R}. In V. Stodden, F. Leisch, \& R. D. Peng (Eds.), \emph{Implementing reproducible computational research}. Chapman; Hall/CRC. \url{http://www.crcpress.com/product/isbn/9781466561595}
+
+\leavevmode\vadjust pre{\hypertarget{ref-knitr2015}{}}%
+Xie, Y. (2015). \emph{Dynamic documents with {R} and knitr} (2nd ed.). Chapman; Hall/CRC. \url{https://yihui.org/knitr/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-bookdown2016}{}}%
+Xie, Y. (2016). \emph{Bookdown: Authoring books and technical documents with {R} markdown}. Chapman; Hall/CRC. \url{https://bookdown.org/yihui/bookdown}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-bookdown}{}}%
+Xie, Y. (2022a). \emph{Bookdown: Authoring books and technical documents with r markdown}. \url{https://CRAN.R-project.org/package=bookdown}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-knitr}{}}%
+Xie, Y. (2022b). \emph{Knitr: A general-purpose package for dynamic report generation in r}. \url{https://yihui.org/knitr/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-rmarkdown2018}{}}%
+Xie, Y., Allaire, J. J., \& Grolemund, G. (2018). \emph{R markdown: The definitive guide}. Chapman; Hall/CRC. \url{https://bookdown.org/yihui/rmarkdown}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-DT}{}}%
+Xie, Y., Cheng, J., \& Tan, X. (2022). \emph{DT: A wrapper of the JavaScript library DataTables}. \url{https://github.com/rstudio/DT}
+
+\leavevmode\vadjust pre{\hypertarget{ref-rmarkdown2020}{}}%
+Xie, Y., Dervieux, C., \& Riederer, E. (2020). \emph{R markdown cookbook}. Chapman; Hall/CRC. \url{https://bookdown.org/yihui/rmarkdown-cookbook}
+
+\end{CSLReferences}
+
+'\,`
+
+\end{document}

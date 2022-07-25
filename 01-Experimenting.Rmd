@@ -22,4 +22,13 @@ Let's refresh here some fudamental concepts.
 
 ## Running an experiment
 
+### Replication and repetition
+
+### Randomization
+
+## To explore further
+
+### Hierarchy of evidence
+
+https://en.wikipedia.org/wiki/Hierarchy_of_evidence
 

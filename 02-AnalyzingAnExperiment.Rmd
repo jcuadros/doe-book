@@ -8,13 +8,42 @@
 
 ### Confounded variables
 
+### Optimality
+
+### Efficacy
+
+### Sphericity
+
+
+
+
 ## Identifying relevant contributions
 
+### Pareto chart of the effects
+
+### Pareto chart of the contributions
+
+### Normal plot
+
+### Half-normal plot
+
 ## Visualizing results, effects and interactions
+
+### Main effects plots
+
+### Interaction plots
 
 ## Analyzing through models
 
 ### Quantitative models
 
 ### Models with nominal variables
+
+## Errors estimation
+
+### Lack-of-fit error
+
+### True error
+
+### Practical relevance and statistical significance
 

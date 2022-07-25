@@ -14,6 +14,13 @@
 
 ## Taguchi's approach to orthogonal arrays
 
+## Follow-up
+
+### Follow-up designs
+
+### Confirmatory runs
+
+
 ## To explore further
 
 ### Adding center points

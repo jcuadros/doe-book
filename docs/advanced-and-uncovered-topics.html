@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 11 Advanced and uncovered topics | Design of Experiments</title>
+  <meta name="description" content="This is a book on design of experiments, build for a Master’s level course in a scientific discipline" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 11 Advanced and uncovered topics | Design of Experiments" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a book on design of experiments, build for a Master’s level course in a scientific discipline" />
+  <meta name="github-repo" content="jcuadros/doe-book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 11 Advanced and uncovered topics | Design of Experiments" />
+  
+  <meta name="twitter:description" content="This is a book on design of experiments, build for a Master’s level course in a scientific discipline" />
+  
+
+<meta name="author" content="Jordi Cuadros, Vanessa Serrano" />
+
+
+<meta name="date" content="2022-07-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sequential-optimization.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Design of Experiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#license-and-contributing"><i class="fa fa-check"></i><b>1.1</b> License and contributing</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="experimenting.html"><a href="experimenting.html"><i class="fa fa-check"></i><b>2</b> Experimenting</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="experimenting.html"><a href="experimenting.html#why-do-we-experiment-the-causality-problem"><i class="fa fa-check"></i><b>2.1</b> Why do we experiment? The causality problem</a></li>
+<li class="chapter" data-level="2.2" data-path="experimenting.html"><a href="experimenting.html#the-elements-of-an-experiment"><i class="fa fa-check"></i><b>2.2</b> The elements of an experiment</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="experimenting.html"><a href="experimenting.html#a-basic-schema-for-an-experiment"><i class="fa fa-check"></i><b>2.2.1</b> A basic schema for an experiment</a></li>
+<li class="chapter" data-level="2.2.2" data-path="experimenting.html"><a href="experimenting.html#types-of-variables"><i class="fa fa-check"></i><b>2.2.2</b> Types of variables</a></li>
+<li class="chapter" data-level="2.2.3" data-path="experimenting.html"><a href="experimenting.html#data-types"><i class="fa fa-check"></i><b>2.2.3</b> Data types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="experimenting.html"><a href="experimenting.html#validity-of-an-experiment"><i class="fa fa-check"></i><b>2.3</b> Validity of an experiment</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="experimenting.html"><a href="experimenting.html#internal-validity"><i class="fa fa-check"></i><b>2.3.1</b> Internal validity</a></li>
+<li class="chapter" data-level="2.3.2" data-path="experimenting.html"><a href="experimenting.html#external-validity"><i class="fa fa-check"></i><b>2.3.2</b> External validity</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="experimenting.html"><a href="experimenting.html#running-an-experiment"><i class="fa fa-check"></i><b>2.4</b> Running an experiment</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="experimenting.html"><a href="experimenting.html#replication-and-repetition"><i class="fa fa-check"></i><b>2.4.1</b> Replication and repetition</a></li>
+<li class="chapter" data-level="2.4.2" data-path="experimenting.html"><a href="experimenting.html#randomization"><i class="fa fa-check"></i><b>2.4.2</b> Randomization</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="experimenting.html"><a href="experimenting.html#to-explore-further"><i class="fa fa-check"></i><b>2.5</b> To explore further</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="experimenting.html"><a href="experimenting.html#hierarchy-of-evidence"><i class="fa fa-check"></i><b>2.5.1</b> Hierarchy of evidence</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html"><i class="fa fa-check"></i><b>3</b> Analyzing an experiment</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#compiling-the-experimental-matrix"><i class="fa fa-check"></i><b>3.1</b> Compiling the experimental matrix</a></li>
+<li class="chapter" data-level="3.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#analyzing-the-experiment"><i class="fa fa-check"></i><b>3.2</b> Analyzing the experiment</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#ortogonality"><i class="fa fa-check"></i><b>3.2.1</b> Ortogonality</a></li>
+<li class="chapter" data-level="3.2.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#confounded-variables"><i class="fa fa-check"></i><b>3.2.2</b> Confounded variables</a></li>
+<li class="chapter" data-level="3.2.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#optimality"><i class="fa fa-check"></i><b>3.2.3</b> Optimality</a></li>
+<li class="chapter" data-level="3.2.4" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#efficacy"><i class="fa fa-check"></i><b>3.2.4</b> Efficacy</a></li>
+<li class="chapter" data-level="3.2.5" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#sphericity"><i class="fa fa-check"></i><b>3.2.5</b> Sphericity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#identifying-relevant-contributions"><i class="fa fa-check"></i><b>3.3</b> Identifying relevant contributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#pareto-chart-of-the-effects"><i class="fa fa-check"></i><b>3.3.1</b> Pareto chart of the effects</a></li>
+<li class="chapter" data-level="3.3.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#pareto-chart-of-the-contributions"><i class="fa fa-check"></i><b>3.3.2</b> Pareto chart of the contributions</a></li>
+<li class="chapter" data-level="3.3.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#normal-plot"><i class="fa fa-check"></i><b>3.3.3</b> Normal plot</a></li>
+<li class="chapter" data-level="3.3.4" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#half-normal-plot"><i class="fa fa-check"></i><b>3.3.4</b> Half-normal plot</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#visualizing-results-effects-and-interactions"><i class="fa fa-check"></i><b>3.4</b> Visualizing results, effects and interactions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#main-effects-plots"><i class="fa fa-check"></i><b>3.4.1</b> Main effects plots</a></li>
+<li class="chapter" data-level="3.4.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#interaction-plots"><i class="fa fa-check"></i><b>3.4.2</b> Interaction plots</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#analyzing-through-models"><i class="fa fa-check"></i><b>3.5</b> Analyzing through models</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#quantitative-models"><i class="fa fa-check"></i><b>3.5.1</b> Quantitative models</a></li>
+<li class="chapter" data-level="3.5.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#models-with-nominal-variables"><i class="fa fa-check"></i><b>3.5.2</b> Models with nominal variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#errors-estimation"><i class="fa fa-check"></i><b>3.6</b> Errors estimation</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#lack-of-fit-error"><i class="fa fa-check"></i><b>3.6.1</b> Lack-of-fit error</a></li>
+<li class="chapter" data-level="3.6.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#true-error"><i class="fa fa-check"></i><b>3.6.2</b> True error</a></li>
+<li class="chapter" data-level="3.6.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#practical-relevance-and-statistical-significance"><i class="fa fa-check"></i><b>3.6.3</b> Practical relevance and statistical significance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="one-factor-experiments.html"><a href="one-factor-experiments.html"><i class="fa fa-check"></i><b>4</b> One factor experiments</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="one-factor-experiments.html"><a href="one-factor-experiments.html#two-level-experiments"><i class="fa fa-check"></i><b>4.1</b> Two-level experiments</a></li>
+<li class="chapter" data-level="4.2" data-path="one-factor-experiments.html"><a href="one-factor-experiments.html#multiple-level-experiments"><i class="fa fa-check"></i><b>4.2</b> Multiple-level experiments</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="one-factor-experiments.html"><a href="one-factor-experiments.html#quantitative-variables"><i class="fa fa-check"></i><b>4.2.1</b> Quantitative variables</a></li>
+<li class="chapter" data-level="4.2.2" data-path="one-factor-experiments.html"><a href="one-factor-experiments.html#nominal-levels"><i class="fa fa-check"></i><b>4.2.2</b> Nominal levels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="one-factor-experiments.html"><a href="one-factor-experiments.html#to-explore-further-1"><i class="fa fa-check"></i><b>4.3</b> To explore further</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="one-factor-experiments.html"><a href="one-factor-experiments.html#single-subject-experiments"><i class="fa fa-check"></i><b>4.3.1</b> Single-subject experiments</a></li>
+<li class="chapter" data-level="4.3.2" data-path="one-factor-experiments.html"><a href="one-factor-experiments.html#salomon-design"><i class="fa fa-check"></i><b>4.3.2</b> Salomon design</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html"><i class="fa fa-check"></i><b>5</b> Full factorial designs</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#ofat-and-their-limitations"><i class="fa fa-check"></i><b>5.1</b> OFAT and their limitations</a></li>
+<li class="chapter" data-level="5.2" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#full-factorial-designs-1"><i class="fa fa-check"></i><b>5.2</b> Full factorial designs</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#two-levels-factorial-designs"><i class="fa fa-check"></i><b>5.2.1</b> Two-levels factorial designs</a></li>
+<li class="chapter" data-level="5.2.2" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#multiple-levels-factorial-designs"><i class="fa fa-check"></i><b>5.2.2</b> Multiple-levels factorial designs</a></li>
+<li class="chapter" data-level="5.2.3" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#mixed-levels-factorial-designs"><i class="fa fa-check"></i><b>5.2.3</b> Mixed-levels factorial designs</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#degrees-of-freedom"><i class="fa fa-check"></i><b>5.3</b> Degrees of freedom</a></li>
+<li class="chapter" data-level="5.4" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#interactions-and-error"><i class="fa fa-check"></i><b>5.4</b> Interactions and error</a></li>
+<li class="chapter" data-level="5.5" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#to-explore-further-2"><i class="fa fa-check"></i><b>5.5</b> To explore further</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#latin-and-grecolatin-square"><i class="fa fa-check"></i><b>5.5.1</b> Latin and grecolatin square</a></li>
+<li class="chapter" data-level="5.5.2" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#nested-split-plot-split-split-and-strip-strip-designs"><i class="fa fa-check"></i><b>5.5.2</b> Nested, split-plot, split-split and strip-strip designs</a></li>
+<li class="chapter" data-level="5.5.3" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#bibd"><i class="fa fa-check"></i><b>5.5.3</b> BIBD</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html"><i class="fa fa-check"></i><b>6</b> Fractional and saturated factorial designs</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#fractional-factorial-designs"><i class="fa fa-check"></i><b>6.1</b> Fractional factorial designs</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#two-levels-fractional-factorial-design"><i class="fa fa-check"></i><b>6.1.1</b> Two-levels fractional factorial design</a></li>
+<li class="chapter" data-level="6.1.2" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#alias-structure-and-design-generator"><i class="fa fa-check"></i><b>6.1.2</b> Alias structure and design generator</a></li>
+<li class="chapter" data-level="6.1.3" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#resolution-of-a-design"><i class="fa fa-check"></i><b>6.1.3</b> Resolution of a design</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#saturated-factorial-designs"><i class="fa fa-check"></i><b>6.2</b> Saturated factorial designs</a></li>
+<li class="chapter" data-level="6.3" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#plackett-burman-designs"><i class="fa fa-check"></i><b>6.3</b> Plackett-Burman designs</a></li>
+<li class="chapter" data-level="6.4" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#taguchis-approach-to-orthogonal-arrays"><i class="fa fa-check"></i><b>6.4</b> Taguchi’s approach to orthogonal arrays</a></li>
+<li class="chapter" data-level="6.5" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#follow-up"><i class="fa fa-check"></i><b>6.5</b> Follow-up</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#follow-up-designs"><i class="fa fa-check"></i><b>6.5.1</b> Follow-up designs</a></li>
+<li class="chapter" data-level="6.5.2" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#confirmatory-runs"><i class="fa fa-check"></i><b>6.5.2</b> Confirmatory runs</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#to-explore-further-3"><i class="fa fa-check"></i><b>6.6</b> To explore further</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#adding-center-points"><i class="fa fa-check"></i><b>6.6.1</b> Adding center points</a></li>
+<li class="chapter" data-level="6.6.2" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#definitive-screening-designs"><i class="fa fa-check"></i><b>6.6.2</b> Definitive screening designs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html"><i class="fa fa-check"></i><b>7</b> Non orthogonal arrays</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#modified-taguchis-orthogonal-arrays"><i class="fa fa-check"></i><b>7.1</b> Modified Taguchi’s orthogonal arrays</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#column-upgradingmerging"><i class="fa fa-check"></i><b>7.1.1</b> Column upgrading/merging</a></li>
+<li class="chapter" data-level="7.1.2" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#dummy-treatmentlevel-or-column-downgradingdegrading"><i class="fa fa-check"></i><b>7.1.2</b> Dummy treatment/level or column downgrading/degrading</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#optimal-designs"><i class="fa fa-check"></i><b>7.2</b> Optimal designs</a></li>
+<li class="chapter" data-level="7.3" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#supersaturated-designs"><i class="fa fa-check"></i><b>7.3</b> Supersaturated designs</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="taguchi-robust-design-strategy.html"><a href="taguchi-robust-design-strategy.html"><i class="fa fa-check"></i><b>8</b> Taguchi Robust Design strategy</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="taguchi-robust-design-strategy.html"><a href="taguchi-robust-design-strategy.html#noise-and-control-factors"><i class="fa fa-check"></i><b>8.1</b> Noise and control factors</a></li>
+<li class="chapter" data-level="8.2" data-path="taguchi-robust-design-strategy.html"><a href="taguchi-robust-design-strategy.html#inner-and-outer-arrays-designs"><i class="fa fa-check"></i><b>8.2</b> Inner and outer arrays designs</a></li>
+<li class="chapter" data-level="8.3" data-path="taguchi-robust-design-strategy.html"><a href="taguchi-robust-design-strategy.html#two-step-optimization-technique"><i class="fa fa-check"></i><b>8.3</b> Two-step optimization technique</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="surface-response-designs.html"><a href="surface-response-designs.html"><i class="fa fa-check"></i><b>9</b> Surface response designs</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="surface-response-designs.html"><a href="surface-response-designs.html#three-level-full-factorial-designs"><i class="fa fa-check"></i><b>9.1</b> Three-level full factorial designs</a></li>
+<li class="chapter" data-level="9.2" data-path="surface-response-designs.html"><a href="surface-response-designs.html#box-wilson-central-composite-designs"><i class="fa fa-check"></i><b>9.2</b> Box-Wilson central composite designs</a></li>
+<li class="chapter" data-level="9.3" data-path="surface-response-designs.html"><a href="surface-response-designs.html#box-behnken-designs"><i class="fa fa-check"></i><b>9.3</b> Box-Behnken designs</a></li>
+<li class="chapter" data-level="9.4" data-path="surface-response-designs.html"><a href="surface-response-designs.html#doehlert-designs"><i class="fa fa-check"></i><b>9.4</b> Doehlert designs</a></li>
+<li class="chapter" data-level="9.5" data-path="surface-response-designs.html"><a href="surface-response-designs.html#sequential-design-of-experiments"><i class="fa fa-check"></i><b>9.5</b> Sequential design of experiments</a></li>
+<li class="chapter" data-level="9.6" data-path="surface-response-designs.html"><a href="surface-response-designs.html#to-explore-further-4"><i class="fa fa-check"></i><b>9.6</b> To explore further</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="surface-response-designs.html"><a href="surface-response-designs.html#optimal-designs-for-rsm"><i class="fa fa-check"></i><b>9.6.1</b> Optimal designs for RSM</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="sequential-optimization.html"><a href="sequential-optimization.html"><i class="fa fa-check"></i><b>10</b> Sequential optimization</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="sequential-optimization.html"><a href="sequential-optimization.html#evop"><i class="fa fa-check"></i><b>10.1</b> EVOP</a></li>
+<li class="chapter" data-level="10.2" data-path="sequential-optimization.html"><a href="sequential-optimization.html#simplex"><i class="fa fa-check"></i><b>10.2</b> Simplex</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html"><i class="fa fa-check"></i><b>11</b> Advanced and uncovered topics</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html#designs-for-nonlinear-effects"><i class="fa fa-check"></i><b>11.1</b> Designs for nonlinear effects</a></li>
+<li class="chapter" data-level="11.2" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html#designs-for-systems-with-restrictions"><i class="fa fa-check"></i><b>11.2</b> Designs for systems with restrictions</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html#mixtures-designs"><i class="fa fa-check"></i><b>11.2.1</b> Mixtures designs</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html#random-levels"><i class="fa fa-check"></i><b>11.3</b> Random levels</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Design of Experiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="advanced-and-uncovered-topics" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Advanced and uncovered topics<a href="advanced-and-uncovered-topics.html#advanced-and-uncovered-topics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="designs-for-nonlinear-effects" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Designs for nonlinear effects<a href="advanced-and-uncovered-topics.html#designs-for-nonlinear-effects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="designs-for-systems-with-restrictions" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Designs for systems with restrictions<a href="advanced-and-uncovered-topics.html#designs-for-systems-with-restrictions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mixtures-designs" class="section level3 hasAnchor" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Mixtures designs<a href="advanced-and-uncovered-topics.html#mixtures-designs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="random-levels" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Random levels<a href="advanced-and-uncovered-topics.html#random-levels" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sequential-optimization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jcuadros/doe-book/blob/main/10-AdvancedUncoveredTopics.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["doe22.pdf", "doe22.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
