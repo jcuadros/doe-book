@@ -1,12 +1,18 @@
 # Non orthogonal arrays
 
-## Modified Taguchi's orthogonal arrays
+## Modified Taguchi's orthogonal arrays (Special designs)
 
 ### Column upgrading/merging
 
 ### Dummy treatment/level or column downgrading/degrading
 
+### Idle column
+
+### Combination design
+
 ## Optimal designs
+
+### Optimality criteria
 
 ## Supersaturated designs
 

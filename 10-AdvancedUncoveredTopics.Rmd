@@ -6,6 +6,12 @@
 
 ### Mixtures designs
 
-## Random levels
+## Designs for computer experiments
+
+### Space-filling designs
+
+https://link.springer.com/content/pdf/10.1007/s00362-021-01249-w.pdf
+
+## Desigsn with random levels
 
 

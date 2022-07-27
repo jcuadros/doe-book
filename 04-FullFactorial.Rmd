@@ -14,13 +14,19 @@
 
 ### Mixed-levels factorial designs
 
+Database: http://neilsloane.com/oadir/
+
 ## Degrees of freedom 
 
 ## Interactions and error
 
 ## To explore further
 
+### Blocking
+
 ### Latin and grecolatin square
+
+https://en.wikipedia.org/wiki/Mutually_orthogonal_Latin_squares
 
 ### Nested, split-plot, split-split and strip-strip designs
 

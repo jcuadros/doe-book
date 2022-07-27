@@ -4,9 +4,9 @@
 
 ### Two-levels fractional factorial design
 
-### Alias structure and design generator
-
 ### Resolution of a design
+
+### Alias structure and design generator
 
 ## Saturated factorial designs
 
@@ -14,12 +14,13 @@
 
 ## Taguchi's approach to orthogonal arrays
 
+### Linear graphs and interaction tables
+
 ## Follow-up
 
 ### Follow-up designs
 
 ### Confirmatory runs
-
 
 ## To explore further
 

@@ -1,8 +1,14 @@
 # Analyzing an experiment 
 
+## Variables, types and levels
+
 ## Compiling the experimental matrix
 
 ## Analyzing the experiment
+
+### Strength
+
+### Resolution
 
 ### Ortogonality
 
@@ -13,8 +19,6 @@
 ### Efficacy
 
 ### Sphericity
-
-
 
 
 ## Identifying relevant contributions

@@ -1,6 +1,6 @@
 --- 
 title: "Design of Experiments"
-author: "Jordi Cuadros, Vanessa Serrano"
+author: "Jordi Cuadros, Laura Fernández Ruano, Vanessa Serrano"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -9,13 +9,13 @@ csl: apa-single-spaced.csl
 nocite: '@*'
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
-description: This is a book on design of experiments, build for a Master's level course in a scientific discipline
+description: This is a book on design of experiments, built for a Master's in Science level course
 link-citations: yes
 github-repo: jcuadros/doe-book
 ---
 
 # About
-This book has been developed by Jordi Cuadros (ORCID) and Vanessa Serrano as a reference material for a Master's course in Design of Experiments at IQS Universitat Ramon Llull (http://www.iqs.url.edu) in Barcelona, Spain. First version (always a draft) was published on September 2022.
+This material is being developed by Jordi Cuadros (https://orcid.org/0000-0001-6513-9140), Laura Fernández Ruano (https://orcid.org/0000-0001-9879-781X) and Vanessa Serrano (https://orcid.org/0000-0001-6572-0680) as a reference material for a Master's course in Design of Experiments at IQS Universitat Ramon Llull (http://www.iqs.url.edu) in Barcelona, Spain. First version (a draft) was published on September 2022.
 
 Current version (Ubuntu-style) is `r format(Sys.Date(),"%y.%m.%d")`
 

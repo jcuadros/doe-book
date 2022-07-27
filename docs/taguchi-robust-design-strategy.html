@@ -5,25 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Taguchi Robust Design strategy | Design of Experiments</title>
-  <meta name="description" content="This is a book on design of experiments, build for a Master’s level course in a scientific discipline" />
+  <meta name="description" content="This is a book on design of experiments, built for a Master’s in Science level course" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Taguchi Robust Design strategy | Design of Experiments" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="This is a book on design of experiments, build for a Master’s level course in a scientific discipline" />
+  <meta property="og:description" content="This is a book on design of experiments, built for a Master’s in Science level course" />
   <meta name="github-repo" content="jcuadros/doe-book" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 8 Taguchi Robust Design strategy | Design of Experiments" />
   
-  <meta name="twitter:description" content="This is a book on design of experiments, build for a Master’s level course in a scientific discipline" />
+  <meta name="twitter:description" content="This is a book on design of experiments, built for a Master’s in Science level course" />
   
 
-<meta name="author" content="Jordi Cuadros, Vanessa Serrano" />
+<meta name="author" content="Jordi Cuadros, Laura Fernández Ruano, Vanessa Serrano" />
 
 
-<meta name="date" content="2022-07-25" />
+<meta name="date" content="2022-07-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -124,37 +124,40 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html"><i class="fa fa-check"></i><b>3</b> Analyzing an experiment</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#compiling-the-experimental-matrix"><i class="fa fa-check"></i><b>3.1</b> Compiling the experimental matrix</a></li>
-<li class="chapter" data-level="3.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#analyzing-the-experiment"><i class="fa fa-check"></i><b>3.2</b> Analyzing the experiment</a>
+<li class="chapter" data-level="3.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#variables-types-and-levels"><i class="fa fa-check"></i><b>3.1</b> Variables, types and levels</a></li>
+<li class="chapter" data-level="3.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#compiling-the-experimental-matrix"><i class="fa fa-check"></i><b>3.2</b> Compiling the experimental matrix</a></li>
+<li class="chapter" data-level="3.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#analyzing-the-experiment"><i class="fa fa-check"></i><b>3.3</b> Analyzing the experiment</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#ortogonality"><i class="fa fa-check"></i><b>3.2.1</b> Ortogonality</a></li>
-<li class="chapter" data-level="3.2.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#confounded-variables"><i class="fa fa-check"></i><b>3.2.2</b> Confounded variables</a></li>
-<li class="chapter" data-level="3.2.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#optimality"><i class="fa fa-check"></i><b>3.2.3</b> Optimality</a></li>
-<li class="chapter" data-level="3.2.4" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#efficacy"><i class="fa fa-check"></i><b>3.2.4</b> Efficacy</a></li>
-<li class="chapter" data-level="3.2.5" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#sphericity"><i class="fa fa-check"></i><b>3.2.5</b> Sphericity</a></li>
+<li class="chapter" data-level="3.3.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#strength"><i class="fa fa-check"></i><b>3.3.1</b> Strength</a></li>
+<li class="chapter" data-level="3.3.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#resolution"><i class="fa fa-check"></i><b>3.3.2</b> Resolution</a></li>
+<li class="chapter" data-level="3.3.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#ortogonality"><i class="fa fa-check"></i><b>3.3.3</b> Ortogonality</a></li>
+<li class="chapter" data-level="3.3.4" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#confounded-variables"><i class="fa fa-check"></i><b>3.3.4</b> Confounded variables</a></li>
+<li class="chapter" data-level="3.3.5" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#optimality"><i class="fa fa-check"></i><b>3.3.5</b> Optimality</a></li>
+<li class="chapter" data-level="3.3.6" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#efficacy"><i class="fa fa-check"></i><b>3.3.6</b> Efficacy</a></li>
+<li class="chapter" data-level="3.3.7" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#sphericity"><i class="fa fa-check"></i><b>3.3.7</b> Sphericity</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#identifying-relevant-contributions"><i class="fa fa-check"></i><b>3.3</b> Identifying relevant contributions</a>
+<li class="chapter" data-level="3.4" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#identifying-relevant-contributions"><i class="fa fa-check"></i><b>3.4</b> Identifying relevant contributions</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#pareto-chart-of-the-effects"><i class="fa fa-check"></i><b>3.3.1</b> Pareto chart of the effects</a></li>
-<li class="chapter" data-level="3.3.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#pareto-chart-of-the-contributions"><i class="fa fa-check"></i><b>3.3.2</b> Pareto chart of the contributions</a></li>
-<li class="chapter" data-level="3.3.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#normal-plot"><i class="fa fa-check"></i><b>3.3.3</b> Normal plot</a></li>
-<li class="chapter" data-level="3.3.4" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#half-normal-plot"><i class="fa fa-check"></i><b>3.3.4</b> Half-normal plot</a></li>
+<li class="chapter" data-level="3.4.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#pareto-chart-of-the-effects"><i class="fa fa-check"></i><b>3.4.1</b> Pareto chart of the effects</a></li>
+<li class="chapter" data-level="3.4.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#pareto-chart-of-the-contributions"><i class="fa fa-check"></i><b>3.4.2</b> Pareto chart of the contributions</a></li>
+<li class="chapter" data-level="3.4.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#normal-plot"><i class="fa fa-check"></i><b>3.4.3</b> Normal plot</a></li>
+<li class="chapter" data-level="3.4.4" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#half-normal-plot"><i class="fa fa-check"></i><b>3.4.4</b> Half-normal plot</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#visualizing-results-effects-and-interactions"><i class="fa fa-check"></i><b>3.4</b> Visualizing results, effects and interactions</a>
+<li class="chapter" data-level="3.5" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#visualizing-results-effects-and-interactions"><i class="fa fa-check"></i><b>3.5</b> Visualizing results, effects and interactions</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#main-effects-plots"><i class="fa fa-check"></i><b>3.4.1</b> Main effects plots</a></li>
-<li class="chapter" data-level="3.4.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#interaction-plots"><i class="fa fa-check"></i><b>3.4.2</b> Interaction plots</a></li>
+<li class="chapter" data-level="3.5.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#main-effects-plots"><i class="fa fa-check"></i><b>3.5.1</b> Main effects plots</a></li>
+<li class="chapter" data-level="3.5.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#interaction-plots"><i class="fa fa-check"></i><b>3.5.2</b> Interaction plots</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#analyzing-through-models"><i class="fa fa-check"></i><b>3.5</b> Analyzing through models</a>
+<li class="chapter" data-level="3.6" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#analyzing-through-models"><i class="fa fa-check"></i><b>3.6</b> Analyzing through models</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#quantitative-models"><i class="fa fa-check"></i><b>3.5.1</b> Quantitative models</a></li>
-<li class="chapter" data-level="3.5.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#models-with-nominal-variables"><i class="fa fa-check"></i><b>3.5.2</b> Models with nominal variables</a></li>
+<li class="chapter" data-level="3.6.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#quantitative-models"><i class="fa fa-check"></i><b>3.6.1</b> Quantitative models</a></li>
+<li class="chapter" data-level="3.6.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#models-with-nominal-variables"><i class="fa fa-check"></i><b>3.6.2</b> Models with nominal variables</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#errors-estimation"><i class="fa fa-check"></i><b>3.6</b> Errors estimation</a>
+<li class="chapter" data-level="3.7" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#errors-estimation"><i class="fa fa-check"></i><b>3.7</b> Errors estimation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#lack-of-fit-error"><i class="fa fa-check"></i><b>3.6.1</b> Lack-of-fit error</a></li>
-<li class="chapter" data-level="3.6.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#true-error"><i class="fa fa-check"></i><b>3.6.2</b> True error</a></li>
-<li class="chapter" data-level="3.6.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#practical-relevance-and-statistical-significance"><i class="fa fa-check"></i><b>3.6.3</b> Practical relevance and statistical significance</a></li>
+<li class="chapter" data-level="3.7.1" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#lack-of-fit-error"><i class="fa fa-check"></i><b>3.7.1</b> Lack-of-fit error</a></li>
+<li class="chapter" data-level="3.7.2" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#true-error"><i class="fa fa-check"></i><b>3.7.2</b> True error</a></li>
+<li class="chapter" data-level="3.7.3" data-path="analyzing-an-experiment.html"><a href="analyzing-an-experiment.html#practical-relevance-and-statistical-significance"><i class="fa fa-check"></i><b>3.7.3</b> Practical relevance and statistical significance</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="one-factor-experiments.html"><a href="one-factor-experiments.html"><i class="fa fa-check"></i><b>4</b> One factor experiments</a>
@@ -184,9 +187,10 @@ div.csl-indent {
 <li class="chapter" data-level="5.4" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#interactions-and-error"><i class="fa fa-check"></i><b>5.4</b> Interactions and error</a></li>
 <li class="chapter" data-level="5.5" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#to-explore-further-2"><i class="fa fa-check"></i><b>5.5</b> To explore further</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#latin-and-grecolatin-square"><i class="fa fa-check"></i><b>5.5.1</b> Latin and grecolatin square</a></li>
-<li class="chapter" data-level="5.5.2" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#nested-split-plot-split-split-and-strip-strip-designs"><i class="fa fa-check"></i><b>5.5.2</b> Nested, split-plot, split-split and strip-strip designs</a></li>
-<li class="chapter" data-level="5.5.3" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#bibd"><i class="fa fa-check"></i><b>5.5.3</b> BIBD</a></li>
+<li class="chapter" data-level="5.5.1" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#blocking"><i class="fa fa-check"></i><b>5.5.1</b> Blocking</a></li>
+<li class="chapter" data-level="5.5.2" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#latin-and-grecolatin-square"><i class="fa fa-check"></i><b>5.5.2</b> Latin and grecolatin square</a></li>
+<li class="chapter" data-level="5.5.3" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#nested-split-plot-split-split-and-strip-strip-designs"><i class="fa fa-check"></i><b>5.5.3</b> Nested, split-plot, split-split and strip-strip designs</a></li>
+<li class="chapter" data-level="5.5.4" data-path="full-factorial-designs.html"><a href="full-factorial-designs.html#bibd"><i class="fa fa-check"></i><b>5.5.4</b> BIBD</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html"><i class="fa fa-check"></i><b>6</b> Fractional and saturated factorial designs</a>
@@ -194,12 +198,15 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#fractional-factorial-designs"><i class="fa fa-check"></i><b>6.1</b> Fractional factorial designs</a>
 <ul>
 <li class="chapter" data-level="6.1.1" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#two-levels-fractional-factorial-design"><i class="fa fa-check"></i><b>6.1.1</b> Two-levels fractional factorial design</a></li>
-<li class="chapter" data-level="6.1.2" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#alias-structure-and-design-generator"><i class="fa fa-check"></i><b>6.1.2</b> Alias structure and design generator</a></li>
-<li class="chapter" data-level="6.1.3" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#resolution-of-a-design"><i class="fa fa-check"></i><b>6.1.3</b> Resolution of a design</a></li>
+<li class="chapter" data-level="6.1.2" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#resolution-of-a-design"><i class="fa fa-check"></i><b>6.1.2</b> Resolution of a design</a></li>
+<li class="chapter" data-level="6.1.3" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#alias-structure-and-design-generator"><i class="fa fa-check"></i><b>6.1.3</b> Alias structure and design generator</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#saturated-factorial-designs"><i class="fa fa-check"></i><b>6.2</b> Saturated factorial designs</a></li>
 <li class="chapter" data-level="6.3" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#plackett-burman-designs"><i class="fa fa-check"></i><b>6.3</b> Plackett-Burman designs</a></li>
-<li class="chapter" data-level="6.4" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#taguchis-approach-to-orthogonal-arrays"><i class="fa fa-check"></i><b>6.4</b> Taguchi’s approach to orthogonal arrays</a></li>
+<li class="chapter" data-level="6.4" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#taguchis-approach-to-orthogonal-arrays"><i class="fa fa-check"></i><b>6.4</b> Taguchi’s approach to orthogonal arrays</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#linear-graphs-and-interaction-tables"><i class="fa fa-check"></i><b>6.4.1</b> Linear graphs and interaction tables</a></li>
+</ul></li>
 <li class="chapter" data-level="6.5" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#follow-up"><i class="fa fa-check"></i><b>6.5</b> Follow-up</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="fractional-and-saturated-factorial-designs.html"><a href="fractional-and-saturated-factorial-designs.html#follow-up-designs"><i class="fa fa-check"></i><b>6.5.1</b> Follow-up designs</a></li>
@@ -213,12 +220,17 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html"><i class="fa fa-check"></i><b>7</b> Non orthogonal arrays</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#modified-taguchis-orthogonal-arrays"><i class="fa fa-check"></i><b>7.1</b> Modified Taguchi’s orthogonal arrays</a>
+<li class="chapter" data-level="7.1" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#modified-taguchis-orthogonal-arrays-special-designs"><i class="fa fa-check"></i><b>7.1</b> Modified Taguchi’s orthogonal arrays (Special designs)</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#column-upgradingmerging"><i class="fa fa-check"></i><b>7.1.1</b> Column upgrading/merging</a></li>
 <li class="chapter" data-level="7.1.2" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#dummy-treatmentlevel-or-column-downgradingdegrading"><i class="fa fa-check"></i><b>7.1.2</b> Dummy treatment/level or column downgrading/degrading</a></li>
+<li class="chapter" data-level="7.1.3" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#idle-column"><i class="fa fa-check"></i><b>7.1.3</b> Idle column</a></li>
+<li class="chapter" data-level="7.1.4" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#combination-design"><i class="fa fa-check"></i><b>7.1.4</b> Combination design</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#optimal-designs"><i class="fa fa-check"></i><b>7.2</b> Optimal designs</a></li>
+<li class="chapter" data-level="7.2" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#optimal-designs"><i class="fa fa-check"></i><b>7.2</b> Optimal designs</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#optimality-criteria"><i class="fa fa-check"></i><b>7.2.1</b> Optimality criteria</a></li>
+</ul></li>
 <li class="chapter" data-level="7.3" data-path="non-orthogonal-arrays.html"><a href="non-orthogonal-arrays.html#supersaturated-designs"><i class="fa fa-check"></i><b>7.3</b> Supersaturated designs</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="taguchi-robust-design-strategy.html"><a href="taguchi-robust-design-strategy.html"><i class="fa fa-check"></i><b>8</b> Taguchi Robust Design strategy</a>
@@ -251,7 +263,11 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="11.2.1" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html#mixtures-designs"><i class="fa fa-check"></i><b>11.2.1</b> Mixtures designs</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html#random-levels"><i class="fa fa-check"></i><b>11.3</b> Random levels</a></li>
+<li class="chapter" data-level="11.3" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html#designs-for-computer-experiments"><i class="fa fa-check"></i><b>11.3</b> Designs for computer experiments</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html#space-filling-designs"><i class="fa fa-check"></i><b>11.3.1</b> Space-filling designs</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="advanced-and-uncovered-topics.html"><a href="advanced-and-uncovered-topics.html#desigsn-with-random-levels"><i class="fa fa-check"></i><b>11.4</b> Desigsn with random levels</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>

@@ -33,14 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Design of Experiments},
-  pdfauthor={Jordi Cuadros, Vanessa Serrano},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -95,10 +87,18 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Design of Experiments},
+  pdfauthor={Jordi Cuadros, Laura Fernández Ruano, Vanessa Serrano},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Design of Experiments}
-\author{Jordi Cuadros, Vanessa Serrano}
-\date{2022-07-25}
+\author{Jordi Cuadros, Laura Fernández Ruano, Vanessa Serrano}
+\date{2022-07-27}
 
 \begin{document}
 \maketitle
@@ -110,9 +110,9 @@
 \hypertarget{about}{%
 \chapter{About}\label{about}}
 
-This book has been developed by Jordi Cuadros (ORCID) and Vanessa Serrano as a reference material for a Master's course in Design of Experiments at IQS Universitat Ramon Llull (\url{http://www.iqs.url.edu}) in Barcelona, Spain. First version (always a draft) was published on September 2022.
+This material is being developed by Jordi Cuadros (\url{https://orcid.org/0000-0001-6513-9140}), Laura Fernández Ruano (\url{https://orcid.org/0000-0001-9879-781X}) and Vanessa Serrano (\url{https://orcid.org/0000-0001-6572-0680}) as a reference material for a Master's course in Design of Experiments at IQS Universitat Ramon Llull (\url{http://www.iqs.url.edu}) in Barcelona, Spain. First version (a draft) was published on September 2022.
 
-Current version (Ubuntu-style) is 22.07.25
+Current version (Ubuntu-style) is 22.07.27
 
 \hypertarget{license-and-contributing}{%
 \section{License and contributing}\label{license-and-contributing}}
@@ -172,11 +172,20 @@ Let's refresh here some fudamental concepts.
 \hypertarget{analyzing-an-experiment}{%
 \chapter{Analyzing an experiment}\label{analyzing-an-experiment}}
 
+\hypertarget{variables-types-and-levels}{%
+\section{Variables, types and levels}\label{variables-types-and-levels}}
+
 \hypertarget{compiling-the-experimental-matrix}{%
 \section{Compiling the experimental matrix}\label{compiling-the-experimental-matrix}}
 
 \hypertarget{analyzing-the-experiment}{%
 \section{Analyzing the experiment}\label{analyzing-the-experiment}}
+
+\hypertarget{strength}{%
+\subsection{Strength}\label{strength}}
+
+\hypertarget{resolution}{%
+\subsection{Resolution}\label{resolution}}
 
 \hypertarget{ortogonality}{%
 \subsection{Ortogonality}\label{ortogonality}}
@@ -286,6 +295,8 @@ Let's refresh here some fudamental concepts.
 \hypertarget{mixed-levels-factorial-designs}{%
 \subsection{Mixed-levels factorial designs}\label{mixed-levels-factorial-designs}}
 
+Database: \url{http://neilsloane.com/oadir/}
+
 \hypertarget{degrees-of-freedom}{%
 \section{Degrees of freedom}\label{degrees-of-freedom}}
 
@@ -295,8 +306,13 @@ Let's refresh here some fudamental concepts.
 \hypertarget{to-explore-further-2}{%
 \section{To explore further}\label{to-explore-further-2}}
 
+\hypertarget{blocking}{%
+\subsection{Blocking}\label{blocking}}
+
 \hypertarget{latin-and-grecolatin-square}{%
 \subsection{Latin and grecolatin square}\label{latin-and-grecolatin-square}}
+
+\url{https://en.wikipedia.org/wiki/Mutually_orthogonal_Latin_squares}
 
 \hypertarget{nested-split-plot-split-split-and-strip-strip-designs}{%
 \subsection{Nested, split-plot, split-split and strip-strip designs}\label{nested-split-plot-split-split-and-strip-strip-designs}}
@@ -313,11 +329,11 @@ Let's refresh here some fudamental concepts.
 \hypertarget{two-levels-fractional-factorial-design}{%
 \subsection{Two-levels fractional factorial design}\label{two-levels-fractional-factorial-design}}
 
-\hypertarget{alias-structure-and-design-generator}{%
-\subsection{Alias structure and design generator}\label{alias-structure-and-design-generator}}
-
 \hypertarget{resolution-of-a-design}{%
 \subsection{Resolution of a design}\label{resolution-of-a-design}}
+
+\hypertarget{alias-structure-and-design-generator}{%
+\subsection{Alias structure and design generator}\label{alias-structure-and-design-generator}}
 
 \hypertarget{saturated-factorial-designs}{%
 \section{Saturated factorial designs}\label{saturated-factorial-designs}}
@@ -327,6 +343,9 @@ Let's refresh here some fudamental concepts.
 
 \hypertarget{taguchis-approach-to-orthogonal-arrays}{%
 \section{Taguchi's approach to orthogonal arrays}\label{taguchis-approach-to-orthogonal-arrays}}
+
+\hypertarget{linear-graphs-and-interaction-tables}{%
+\subsection{Linear graphs and interaction tables}\label{linear-graphs-and-interaction-tables}}
 
 \hypertarget{follow-up}{%
 \section{Follow-up}\label{follow-up}}
@@ -349,8 +368,8 @@ Let's refresh here some fudamental concepts.
 \hypertarget{non-orthogonal-arrays}{%
 \chapter{Non orthogonal arrays}\label{non-orthogonal-arrays}}
 
-\hypertarget{modified-taguchis-orthogonal-arrays}{%
-\section{Modified Taguchi's orthogonal arrays}\label{modified-taguchis-orthogonal-arrays}}
+\hypertarget{modified-taguchis-orthogonal-arrays-special-designs}{%
+\section{Modified Taguchi's orthogonal arrays (Special designs)}\label{modified-taguchis-orthogonal-arrays-special-designs}}
 
 \hypertarget{column-upgradingmerging}{%
 \subsection{Column upgrading/merging}\label{column-upgradingmerging}}
@@ -358,8 +377,17 @@ Let's refresh here some fudamental concepts.
 \hypertarget{dummy-treatmentlevel-or-column-downgradingdegrading}{%
 \subsection{Dummy treatment/level or column downgrading/degrading}\label{dummy-treatmentlevel-or-column-downgradingdegrading}}
 
+\hypertarget{idle-column}{%
+\subsection{Idle column}\label{idle-column}}
+
+\hypertarget{combination-design}{%
+\subsection{Combination design}\label{combination-design}}
+
 \hypertarget{optimal-designs}{%
 \section{Optimal designs}\label{optimal-designs}}
+
+\hypertarget{optimality-criteria}{%
+\subsection{Optimality criteria}\label{optimality-criteria}}
 
 \hypertarget{supersaturated-designs}{%
 \section{Supersaturated designs}\label{supersaturated-designs}}
@@ -421,8 +449,16 @@ Let's refresh here some fudamental concepts.
 \hypertarget{mixtures-designs}{%
 \subsection{Mixtures designs}\label{mixtures-designs}}
 
-\hypertarget{random-levels}{%
-\section{Random levels}\label{random-levels}}
+\hypertarget{designs-for-computer-experiments}{%
+\section{Designs for computer experiments}\label{designs-for-computer-experiments}}
+
+\hypertarget{space-filling-designs}{%
+\subsection{Space-filling designs}\label{space-filling-designs}}
+
+\url{https://link.springer.com/content/pdf/10.1007/s00362-021-01249-w.pdf}
+
+\hypertarget{desigsn-with-random-levels}{%
+\section{Desigsn with random levels}\label{desigsn-with-random-levels}}
 
 \hypertarget{references}{%
 \chapter*{References}\label{references}}
